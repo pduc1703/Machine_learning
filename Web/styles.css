@@ -70,5 +70,5 @@ button:hover {
     border: 2px solid #ddd;
     border-radius: 8px;
     margin-top: 10px;
-    display: none; /* Ảnh không hiển thị khi không có ảnh */
+    display: none; 
 }

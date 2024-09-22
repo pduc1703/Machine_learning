@@ -1,5 +1,5 @@
 document.getElementById('uploadForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Ngăn chặn gửi form mặc định
+    event.preventDefault(); 
 
     const fileInput = document.getElementById('fileInput');
     const imagePreview = document.getElementById('imagePreview');
@@ -7,7 +7,7 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
     if (fileInput.files && fileInput.files[0]) {
         const file = fileInput.files[0];
 
-        // Kiểm tra xem tệp có phải là hình ảnh không
+       
         if (!file.type.startsWith('image/')) {
             alert('Vui lòng chọn một tệp ảnh.');
             return;
@@ -17,7 +17,7 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
 
         reader.onload = function(e) {
             imagePreview.src = e.target.result;
-            imagePreview.style.display = 'block'; // Hiển thị ảnh
+            imagePreview.style.display = 'block'; 
         }
 
         reader.readAsDataURL(file);
