@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    z-index: 1; /* Ensure body content is above other layers */
 }
 
 .container {
@@ -16,27 +17,30 @@ body {
     text-align: center;
     max-width: 500px;
     width: 100%;
+    z-index: 2; /* Ensure container is on top */
+    color: #333; /* Ensure visible text color */
 }
 
 h1 {
     margin-bottom: 20px;
-    color: #333;
+    color: #333; /* Ensure the heading has a visible color */
+    font-size: 24px; /* Set a specific size to ensure it's large enough */
 }
 
 #result {
     margin-top: 20px;
+    color: #666; /* Ensure the paragraph has a visible color */
 }
 
 #result p {
     font-size: 18px;
-    color: #666;
 }
 
-#imagePreview {
+.imagePreview {
     max-width: 100%;
     height: auto;
     border: 2px solid #ddd;
     border-radius: 8px;
     margin-top: 10px;
-    display: block; 
+    display: block;
 }
