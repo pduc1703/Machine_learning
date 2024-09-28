@@ -1,6 +1,9 @@
-
-# Hình Ảnh KQ Lap2
-![example](Hình ảnh KQ lap2/KQ1.png)
-![example](KQ2.png)
-![example](KQ3.png)
-![example](KQ4.png)
+# Machine_learning
+# CÂU 1:
+1. Công nghệ sử dụng Sử dụng thư viện: pandas, numpy, sklearn.
+2. Thuật toán sử dụng Naive Bayes
+![example](image/KQ1.png)
+# CÂU 2:
+1. Công nghệ sử dụng: pandas, sklearn.
+2. Thuật toán sử dụng: Naive_bayes
+![example](image/KQ2.png)
