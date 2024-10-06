@@ -27,4 +27,6 @@ title = st.text_input("Dự đoán tích/tiêu cực của kí tự ")
 user = vectorizer.transform(np.array([title]))
 ans = Bernoulli.predict(user)
 
-st.write("Kết quả là: ", "tốt" if ans == "positive" else "không tốt")
+st.write("Kết quả là: ", "Tích Cực" if ans == "positive" else "Tiêu Cực")
+
+
