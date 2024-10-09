@@ -20,12 +20,8 @@ def mean_class(data_train, target):
 def target_pred(data_group, data_test):
     dict_ = {}
     for index, value in enumerate(data_group.values):
-        # Đảm bảo rằng số cột khớp giữa data_test và giá trị trong df_group
-        if data_test.shape[1] == len(value):
-            result = np.sqrt(np.sum((data_test - value) ** 2, axis=1))
-            dict_[index] = result
-        else:
-            st.error(f"Shape mismatch between data_test {data_test.shape} and df_group {value.shape}")
+        result = np.sqrt(np.sum((data_test - value) ** 2, axis=1))
+        dict_[index] = result
     df = pd.DataFrame(dict_)
     return df.idxmin(axis=1)
 
@@ -46,18 +42,17 @@ if uploaded_file is not None:
     st.write("### Class Means")
     st.write(df_group)
 
-    # Check if the number of columns in X_test matches the number of columns in df_group
-    if X_test.shape[1] == df_group.shape[1]:
-        predictions = target_pred(df_group, X_test.values)
-        df_predictions = pd.DataFrame(predictions, columns=['Predict'])
+   
+    predictions = target_pred(df_group, X_test.values)
+    df_predictions = pd.DataFrame(predictions, columns=['Predict'])
+    
+  
+    y_test = y_test.reset_index(drop=True)
+    y_test.columns = ['Actual']
 
-        y_test = y_test.reset_index(drop=True)
-        y_test.columns = ['Actual']
-
-        results = pd.concat([df_predictions, y_test], axis=1)
-        st.write("### Predictions vs Actual")
-        st.write(results)
-    else:
-        st.error("The number of columns in the test data and class means do not match!")
+  
+    results = pd.concat([df_predictions, y_test], axis=1)
+    st.write("### Predictions vs Actual")
+    st.write(results)
 else:
     st.warning("Please upload an Excel file to continue.")
